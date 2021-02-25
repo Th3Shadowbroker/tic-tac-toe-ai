@@ -40,3 +40,9 @@ class GridUtil:
     @staticmethod
     def is_tied(grid: Grid) -> bool:
         return (not GridUtil.player_won(grid)) and (not GridUtil.bot_won(grid)) and grid.is_full()
+
+    @staticmethod
+    def is_over(grid: Grid) -> bool:
+        return GridUtil.player_won(grid) or\
+               GridUtil.bot_won(grid) or\
+               GridUtil.is_tied(grid)
