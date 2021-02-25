@@ -39,7 +39,7 @@ class Game:
         else:
             print("Tie game!")
 
-    def clear_console(self):
+    def __clear_console(self):
         os_name = platform.system().lower()
         if 'windows' in os_name:
             system('cls')
