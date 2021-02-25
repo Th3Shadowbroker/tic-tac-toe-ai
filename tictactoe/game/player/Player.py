@@ -8,7 +8,14 @@ class Player(AbstractPlayer):
         self.__request_input()
 
     def __request_input(self) -> (int, int):
-        user_input = input("Select a field (1-9): ")
+        user_input = None
+
+        try:
+            user_input = input("Select a field (1-9): ")
+        except KeyboardInterrupt:
+            print("Bye!")
+            exit()
+
         if user_input.isnumeric():
             field_index = int(user_input) - 1
             if 0 <= field_index < 9:
